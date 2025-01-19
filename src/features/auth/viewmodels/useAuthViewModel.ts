@@ -1,4 +1,4 @@
-import { AuthService } from "../services/auth-service";
+import { AuthService } from "../models/auth-service";
 import { useToast } from "@/features/common/hooks/use-toast";
 
 import {
@@ -17,7 +17,7 @@ export const useAuthViewModel = (authService: AuthService) => {
 
   const login = (user: string, password: string) => {
     try {
-      const loginResult = authService.login(user, password);
+      const loginResult = authService.login({ user, password });
       if (loginResult) {
         toast({ title: "Login successful" });
       } else {
