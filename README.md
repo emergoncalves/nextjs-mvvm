@@ -2,6 +2,10 @@
 
 Template moderno de Next.js utilizando padrão MVVM (Model-View-ViewModel) e Vertical Slice Architecture.
 
+## 🎯 Objetivo
+
+O objetivo deste projeto é fornecer uma estrutura escalável que oferece mais segurança para a inclusão de novas features, reduzindo o tempo de decisão sobre qual estrutura utilizar. Ao adotar o padrão MVVM, garantimos uma separação clara de responsabilidades, facilitando a manutenção e evolução do código.
+
 ## 🚀 Tecnologias
 
 - [Next.js 14](https://nextjs.org/) - Framework React com SSR
@@ -17,10 +21,10 @@ Template moderno de Next.js utilizando padrão MVVM (Model-View-ViewModel) e Ver
 
 ```bash
 # Clone o repositório
-git clone https://github.com/seu-usuario/proposal-generator-mvvm.git
+git clone https://github.com/emergoncalves/nextjs-mvvm.git
 
 # Entre na pasta
-cd proposal-generator-mvvm
+cd nextjs-mvvm
 
 # Instale as dependências
 npm install
@@ -70,7 +74,7 @@ Este projeto inclui um gerador de estrutura de features que facilita a criação
 Para criar uma nova feature, execute o seguinte comando:
 
 ```bash
-npm run create-feature nome-da-feature
+npx tsx scripts/create-feature nome-da-feature
 ```
 
 Substitua `nome-da-feature` pelo nome desejado para a sua nova feature.
@@ -97,17 +101,43 @@ O gerador cria a seguinte estrutura de diretórios e arquivos:
 
 Este gerador ajuda a manter a consistência e a organização do código, permitindo que você se concentre na lógica específica da sua aplicação.
 
-## 📝 Licença
+## 🛠️ Exemplo de Uso do ViewModel
 
-Este projeto está sob a licença MIT.
+Para utilizar um ViewModel dentro de uma página `page.tsx`, siga o exemplo abaixo. Este exemplo demonstra como integrar um ViewModel para gerenciar o estado e a lógica de negócios de uma página.
 
-## ⚠️ Nota
+### Exemplo de Integração
 
-Este projeto ainda está em desenvolvimento e não está pronto para produção. Use com cautela e contribua para melhorias!
+```typescript
+// src/features/auth/pages/AuthPage.tsx
 
-## 🎯 Objetivo
+import React from "react";
+import { useAuthViewModel } from "../viewmodels/authViewModel";
 
-O objetivo deste projeto é fornecer uma estrutura escalável que oferece mais segurança para a inclusão de novas features, reduzindo o tempo de decisão sobre qual estrutura utilizar. Ao adotar o padrão MVVM, garantimos uma separação clara de responsabilidades, facilitando a manutenção e evolução do código.
+const AuthPage: React.FC = () => {
+  const { user, login, logout } = useAuthViewModel();
+
+  return (
+    <div>
+      <h1>Bem-vindo, {user ? user.name : "Visitante"}</h1>
+      {user ? (
+        <button onClick={logout}>Logout</button>
+      ) : (
+        <button onClick={login}>Login</button>
+      )}
+    </div>
+  );
+};
+
+export default AuthPage;
+```
+
+### Explicação
+
+- **useAuthViewModel**: Um hook personalizado que encapsula a lógica de negócios e o estado relacionado à autenticação.
+- **user**: Estado que representa o usuário autenticado.
+- **login** e **logout**: Funções que manipulam o estado de autenticação.
+
+Este padrão permite que a lógica de negócios seja separada da interface do usuário, facilitando a manutenção e os testes.
 
 ### Vantagens do MVVM
 
@@ -120,3 +150,11 @@ O objetivo deste projeto é fornecer uma estrutura escalável que oferece mais s
 - **Angular**: Utiliza um padrão semelhante com componentes e serviços.
 - **Vue.js**: Com a introdução do Vuex, adota conceitos de MVVM para gerenciamento de estado.
 - **WPF (Windows Presentation Foundation)**: Um dos primeiros a popularizar o MVVM no desenvolvimento de aplicações desktop.
+
+## 📝 Licença
+
+Este projeto está sob a licença MIT.
+
+## ⚠️ Nota
+
+Este projeto ainda está em desenvolvimento e não está pronto para produção. Use com cautela e contribua para melhorias!
