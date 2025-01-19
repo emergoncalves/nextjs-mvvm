@@ -4,7 +4,6 @@ Template moderno de Next.js utilizando padrão MVVM (Model-View-ViewModel) e Ver
 
 ![Nextjs Template MVVM](https://github.com/user-attachments/assets/c4f695bd-ec1b-4fe6-98fa-524ad7dd9a09)
 
-
 ## 🎯 Objetivo
 
 O objetivo deste projeto é fornecer uma estrutura escalável que oferece mais segurança para a inclusão de novas features, reduzindo o tempo de decisão sobre qual estrutura utilizar. Ao adotar o padrão MVVM, garantimos uma separação clara de responsabilidades, facilitando a manutenção e evolução do código.
@@ -161,3 +160,7 @@ Este projeto está sob a licença MIT.
 ## ⚠️ Nota
 
 Este projeto ainda está em desenvolvimento e não está pronto para produção. Use com cautela e contribua para melhorias!
+
+## 📖 Documentação
+
+Para mais detalhes sobre como usar este template, consulte a [Documentação de Uso](./docs/USAGE.md).
