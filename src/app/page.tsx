@@ -37,7 +37,7 @@ export default function Home() {
         <div className="flex justify-center mt-8">
           <Link href="/login">
             <HoverBorderGradient as={Button} className="rounded-full py-2 px-6">
-              <span className="text-black dark:text-white text-lg">Login</span>
+              <span className="text-white">Login</span>
             </HoverBorderGradient>
           </Link>
         </div>
