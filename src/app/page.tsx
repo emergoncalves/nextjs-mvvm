@@ -23,7 +23,7 @@ export default function Home() {
         }}
         className="text-2xl px-4 md:text-4xl lg:text-5xl font-bold text-neutral-700 dark:text-white max-w-4xl leading-relaxed lg:leading-snug text-center mx-auto "
       >
-        Template Next.js com MVVM e Vertical Slicing.
+        Template Next.js com MVVM, Vertical Slicing e Injeção de Dependências.
         <br />
         <Highlight className="text-black dark:text-white">
           Code com clareza, entregue com confiança.
