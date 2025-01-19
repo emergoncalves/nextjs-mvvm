@@ -18,23 +18,25 @@ export default function Login() {
   );
 
   return (
-    <BackgroundLines className="flex items-center justify-center w-full flex-col px-4 bg-slate-900">
-      <Card className="w-96 backdrop-blur-sm bg-black/10 py-8">
+    <BackgroundLines className="flex justify-center items-center h-screen w-full flex-col px-4">
+      <Card className="w-11/12 md:w-96 backdrop-blur-sm dark:bg-black/10 bg-slate-200/10 py-8">
         <CardHeader className="py-4 flex justify-center w-full">
-          <CardTitle className="text-white text-center">Login</CardTitle>
+          <CardTitle className="dark:text-white text-black text-center">
+            Login
+          </CardTitle>
         </CardHeader>
         <CardContent className="p-4">
           <form className="flex flex-col gap-4">
             <Input
               type="text"
               placeholder="Username"
-              className="text-white"
+              className="dark:text-white text-black"
               value={user || ""}
               onChange={(e) => setUser(e.target.value)}
             />
             <Input
               type="password"
-              className="text-white"
+              className="dark:text-white text-black"
               placeholder="******"
               value={password || ""}
               onChange={(e) => setPassword(e.target.value)}
@@ -42,6 +44,7 @@ export default function Login() {
             <Button
               type="button"
               variant="secondary"
+              className="dark:text-black text-white dark:bg-white bg-black hover:bg-black/80 hover:dark:bg-white/80"
               onClick={() => login(user, password)}
             >
               Login

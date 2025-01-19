@@ -17,12 +17,12 @@ export default function ToggleTheme() {
     <div className="absolute right-4 top-4 p-4 z-50">
       {theme === "dark" ? (
         <LucideSun
-          className="w-8 h-8 text-yellow-500"
+          className="w-6 h-6 text-yellow-500"
           onClick={() => setTheme("light")}
         />
       ) : (
         <LucideMoon
-          className="w-8 h-8 text-slate-500"
+          className="w-6 h-6 text-slate-500"
           onClick={() => setTheme("dark")}
         />
       )}
