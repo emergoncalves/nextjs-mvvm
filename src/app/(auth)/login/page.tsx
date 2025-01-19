@@ -14,7 +14,7 @@ import { HeroHighlight } from "@/features/common/components/hero-highlight";
 
 export default function Login() {
   const { login, user, password, setUser, setPassword } = useAuthViewModel(
-    coreDI.auth.authService
+    coreDI.auth.service
   );
 
   return (

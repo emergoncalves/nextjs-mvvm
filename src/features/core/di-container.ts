@@ -1,9 +1,9 @@
-import { AuthDI, authDI } from "../auth/di";
+import { createAuthContainer } from "@/features/auth/di";
 
 export interface CoreDI {
-  auth: AuthDI;
+  auth: ReturnType<typeof createAuthContainer>;
 }
 
 export const coreDI: CoreDI = {
-  auth: authDI,
+  auth: createAuthContainer(),
 };

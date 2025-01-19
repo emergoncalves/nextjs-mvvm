@@ -1,8 +1,12 @@
 import { authLocalStorageService } from "./services/auth-service";
-import { AuthService } from "./services/auth-service";
+import { AuthService } from "./models/auth-service";
 
-export const authDI = {
-  authService: authLocalStorageService() as AuthService,
-};
+export interface AuthContainer {
+  service: AuthService;
+}
 
-export type AuthDI = typeof authDI;
+export function createAuthContainer(): AuthContainer {
+  return { service: authLocalStorageService() };
+}
+
+export type AuthDI = typeof createAuthContainer;

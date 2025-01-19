@@ -1,10 +1,8 @@
-export interface AuthService {
-  login: (user: string, password: string) => boolean;
-  logout: () => void;
-}
+import { AuthModel } from "../models/auth-model";
+import { AuthService } from "../models/auth-service";
 
 export const authLocalStorageService = (): AuthService => {
-  const login = (user: string, password: string): boolean => {
+  const login = ({ user, password }: AuthModel): boolean => {
     if (user === "admin" && password === "admin") {
       localStorage.setItem("user", user);
       return true;
