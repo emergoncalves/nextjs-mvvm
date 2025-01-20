@@ -2,7 +2,9 @@ import { AuthService } from "../models/auth-service";
 import { useToast } from "@/features/common/hooks/use-toast";
 
 import {
+  useLoginResult,
   usePassword,
+  useSetLoginResult,
   useSetPassword,
   useSetUser,
   useUser,
@@ -11,13 +13,15 @@ import {
 export const useAuthViewModel = (authService: AuthService) => {
   const user = useUser();
   const password = usePassword();
+  const loginResult = useLoginResult();
   const setUser = useSetUser();
   const setPassword = useSetPassword();
+  const setLoginResult = useSetLoginResult();
   const { toast } = useToast();
-
   const login = (user: string, password: string) => {
     try {
       const loginResult = authService.login({ user, password });
+      setLoginResult(loginResult);
       if (loginResult) {
         toast({ title: "Login successful" });
       } else {
@@ -51,5 +55,6 @@ export const useAuthViewModel = (authService: AuthService) => {
     setUser,
     toast,
     setPassword,
+    loginResult,
   };
 };
