@@ -57,16 +57,22 @@ export interface ${capitalize(featureName)}Container {
   repository: ${capitalize(featureName)}RepositoryImpl;
 }
 
+let instance: ${capitalize(featureName)}Container | null = null;
+
 export function create${capitalize(featureName)}Container(): ${capitalize(
     featureName
   )}Container {
-  const repository = new ${capitalize(featureName)}RepositoryImpl();
-  const service = new ${capitalize(featureName)}Service(repository);
+  if (!instance) {
+    const repository = new ${capitalize(featureName)}RepositoryImpl();
+    const service = new ${capitalize(featureName)}Service(repository);
 
-  return {
-    service: service,
-    repository: repository,
-  };
+    instance = {
+      service: service,
+      repository: repository,
+    };
+  }
+
+  return instance;
 }
 
 export type ${capitalize(featureName)}DI = typeof create${capitalize(
