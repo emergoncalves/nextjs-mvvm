@@ -69,7 +69,7 @@ src/
 
 ## 🛠️ Gerador de Features
 
-Este projeto inclui um gerador de estrutura de features que facilita a criação de novas funcionalidades seguindo o padrão MVVM com injeção de dependência. O gerador cria automaticamente a estrutura necessária para uma nova feature, incluindo componentes, serviços, repositórios, modelos, stores e viewmodels.
+Este projeto inclui um gerador de estrutura de features que facilita a criação de novas funcionalidades seguindo o padrão MVVM com injeção de dependência. O gerador cria automaticamente a estrutura necessária para uma nova feature, incluindo componentes, serviços, repositórios, modelos, stores, viewmodels e injeção de dependências.
 
 ### Como Usar
 
